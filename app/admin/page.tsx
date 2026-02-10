@@ -20,7 +20,7 @@ const kpis = [
     title: "Active Members",
     value: "1,248",
     change: "+12%",
-    trend: "up" as const,
+    trend: "up",
     icon: Users,
     description: "vs last month",
   },
@@ -28,7 +28,7 @@ const kpis = [
     title: "Revenue (This Month)",
     value: "$48,520",
     change: "+8.2%",
-    trend: "up" as const,
+    trend: "up",
     icon: DollarSign,
     description: "vs last month",
   },
@@ -36,7 +36,7 @@ const kpis = [
     title: "Avg. Daily Check-ins",
     value: "342",
     change: "-3.1%",
-    trend: "down" as const,
+    trend: "down",
     icon: Activity,
     description: "vs last month",
   },
@@ -44,7 +44,7 @@ const kpis = [
     title: "Expiring Soon",
     value: "23",
     change: "Next 7 days",
-    trend: "neutral" as const,
+    trend: "neutral",
     icon: Clock,
     description: "memberships",
   },
@@ -149,7 +149,7 @@ export default function AdminDashboard() {
                   <YAxis tick={{ fontSize: 12 }} stroke="hsl(220,10%,46%)" tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`} />
                   <Tooltip
                     contentStyle={{ borderRadius: "8px", border: "1px solid hsl(214,18%,89%)", fontSize: "12px" }}
-                    formatter={(value: number) => [`$${value.toLocaleString()}`, "Revenue"]}
+                    formatter={(value) => [`$${value.toLocaleString()}`, "Revenue"]}
                   />
                   <Area type="monotone" dataKey="revenue" stroke="hsl(152, 60%, 48%)" strokeWidth={2} fill="url(#revGradient)" />
                 </AreaChart>
@@ -172,7 +172,7 @@ export default function AdminDashboard() {
                   <YAxis tick={{ fontSize: 12 }} stroke="hsl(220,10%,46%)" />
                   <Tooltip
                     contentStyle={{ borderRadius: "8px", border: "1px solid hsl(214,18%,89%)", fontSize: "12px" }}
-                    formatter={(value: number) => [value, "Check-ins"]}
+                    formatter={(value) => [value, "Check-ins"]}
                   />
                   <Bar dataKey="count" fill="hsl(199, 89%, 48%)" radius={[4, 4, 0, 0]} />
                 </BarChart>

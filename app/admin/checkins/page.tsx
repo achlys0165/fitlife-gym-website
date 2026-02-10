@@ -5,15 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
-interface CheckIn {
-  id: string
-  name: string
-  type: "check-in" | "check-out"
-  time: string
-  role: "Member" | "Staff"
-}
-
-const todayCheckins: CheckIn[] = [
+const todayCheckins = [
   { id: "1", name: "Sarah Johnson", type: "check-in", time: "6:15 AM", role: "Member" },
   { id: "2", name: "Jake Turner", type: "check-in", time: "6:30 AM", role: "Staff" },
   { id: "3", name: "Mike Chen", type: "check-in", time: "7:02 AM", role: "Member" },

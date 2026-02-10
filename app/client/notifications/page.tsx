@@ -22,16 +22,7 @@ import { Switch } from "@/components/ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cn } from "@/lib/utils"
 
-type Notification = {
-  id: number
-  type: "class" | "payment" | "announcement" | "workout" | "promo" | "alert"
-  title: string
-  message: string
-  time: string
-  read: boolean
-}
-
-const initialNotifications: Notification[] = [
+const initialNotifications = [
   {
     id: 1,
     type: "class",
@@ -108,7 +99,7 @@ const typeConfig = {
 }
 
 export default function NotificationsPage() {
-  const [notifications, setNotifications] = useState<Notification[]>(initialNotifications)
+  const [notifications, setNotifications] = useState(initialNotifications)
   const [preferences, setPreferences] = useState({
     classReminders: true,
     paymentAlerts: true,

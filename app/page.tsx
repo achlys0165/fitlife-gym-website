@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 const features = [
   { icon: Users, label: "Member Management", description: "Track and manage all your gym members" },
   { icon: Calendar, label: "Class Scheduling", description: "Organize classes and bookings seamlessly" },
-  { icon: Activity, label: "Workout Tracking", description: "Monitor progress and body metrics" },
+  { icon: Activity, label: "Workout Tracking", description: "Monitor progress and plan routines" },
   { icon: BarChart3, label: "Analytics & Reports", description: "Gain insights with powerful dashboards" },
 ]
 
@@ -68,7 +68,7 @@ export default function HomePage() {
                   </div>
                   <h2 className="text-xl font-bold font-heading text-foreground mb-2">Member Dashboard</h2>
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                    View workouts, book classes, track body metrics, manage your membership plan, and more.
+                    View workouts, book classes, manage your membership plan, and more.
                   </p>
                   <Button variant="outline" className="gap-2 group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all bg-transparent">
                     Enter Portal <ArrowRight className="w-4 h-4" />

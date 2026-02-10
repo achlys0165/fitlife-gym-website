@@ -88,7 +88,7 @@ export default function AnalyticsPage() {
                       <CartesianGrid strokeDasharray="3 3" stroke="hsl(214,18%,89%)" />
                       <XAxis dataKey="month" tick={{ fontSize: 12 }} stroke="hsl(220,10%,46%)" />
                       <YAxis tick={{ fontSize: 12 }} stroke="hsl(220,10%,46%)" tickFormatter={(v) => `$${(v/1000).toFixed(0)}k`} />
-                      <Tooltip contentStyle={{ borderRadius: "8px", border: "1px solid hsl(214,18%,89%)", fontSize: "12px" }} formatter={(v: number) => [`$${v.toLocaleString()}`, "Revenue"]} />
+                      <Tooltip contentStyle={{ borderRadius: "8px", border: "1px solid hsl(214,18%,89%)", fontSize: "12px" }} formatter={(v) => [`$${v.toLocaleString()}`, "Revenue"]} />
                       <Area type="monotone" dataKey="revenue" stroke="hsl(152, 60%, 48%)" strokeWidth={2} fill="url(#revGrad)" />
                     </AreaChart>
                   </ResponsiveContainer>
@@ -194,7 +194,7 @@ export default function AnalyticsPage() {
                     {peakHours.map((row) => (
                       <tr key={row.hour}>
                         <td className="text-xs font-medium text-muted-foreground py-1.5 px-2">{row.hour}</td>
-                        {(["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const).map((day) => {
+                        {["mon", "tue", "wed", "thu", "fri", "sat", "sun"].map((day) => {
                           const val = row[day]
                           const intensity = Math.min(val / 150, 1)
                           return (

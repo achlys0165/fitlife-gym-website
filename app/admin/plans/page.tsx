@@ -6,20 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
-interface Plan {
-  id: string
-  name: string
-  price: number
-  duration: string
-  sessionsPerWeek: number
-  classAccess: boolean
-  poolAccess: boolean
-  personalTrainer: boolean
-  featured: boolean
-  active: boolean
-}
-
-const initialPlans: Plan[] = [
+const initialPlans = [
   { id: "1", name: "Basic", price: 29, duration: "Monthly", sessionsPerWeek: 3, classAccess: false, poolAccess: false, personalTrainer: false, featured: false, active: true },
   { id: "2", name: "Standard", price: 49, duration: "Monthly", sessionsPerWeek: 5, classAccess: true, poolAccess: false, personalTrainer: false, featured: false, active: true },
   { id: "3", name: "Premium", price: 79, duration: "Monthly", sessionsPerWeek: 7, classAccess: true, poolAccess: true, personalTrainer: true, featured: true, active: true },
@@ -27,8 +14,8 @@ const initialPlans: Plan[] = [
   { id: "5", name: "Annual Premium", price: 790, duration: "Yearly", sessionsPerWeek: 7, classAccess: true, poolAccess: true, personalTrainer: true, featured: true, active: false },
 ]
 
-const features = ["classAccess", "poolAccess", "personalTrainer"] as const
-const featureLabels: Record<typeof features[number], string> = {
+const features = ["classAccess", "poolAccess", "personalTrainer"]
+const featureLabels = {
   classAccess: "Class Access",
   poolAccess: "Pool Access",
   personalTrainer: "Personal Trainer",

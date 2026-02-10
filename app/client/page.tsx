@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { CreditCard, Calendar, Dumbbell, Clock, Megaphone, ArrowRight, Flame, Timer } from "lucide-react"
+import { CreditCard, Calendar, Dumbbell, Megaphone, ArrowRight, Flame } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -81,27 +81,8 @@ export default function ClientDashboard() {
         </Card>
       </div>
 
-      {/* Next Session + Stats */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="sm:col-span-2 bg-sidebar text-sidebar-foreground">
-          <CardContent className="p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <Timer className="w-4 h-4 text-sidebar-primary" />
-              <span className="text-xs font-medium uppercase tracking-wider text-sidebar-foreground/60">Next Session</span>
-            </div>
-            <h3 className="text-lg font-bold font-heading text-sidebar-primary-foreground">Yoga Flow</h3>
-            <p className="text-sm text-sidebar-foreground/80 mt-1">Maria Lopez &middot; Studio A</p>
-            <div className="flex items-center gap-4 mt-3">
-              <div className="flex items-center gap-1.5 text-sm text-sidebar-foreground/80">
-                <Calendar className="w-3.5 h-3.5" /> Feb 10, 2026
-              </div>
-              <div className="flex items-center gap-1.5 text-sm text-sidebar-foreground/80">
-                <Clock className="w-3.5 h-3.5" /> 9:00 AM
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
+      {/* Stats */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Card>
           <CardContent className="p-5 flex flex-col items-center text-center">
             <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 mb-2">

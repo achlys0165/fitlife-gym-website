@@ -5,14 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 
-interface Workout {
-  day: string
-  name: string
-  exercises: { name: string; sets: number; reps: string; completed: boolean }[]
-  completed: boolean
-}
-
-const weeklyPlan: Workout[] = [
+const weeklyPlan = [
   {
     day: "Monday",
     name: "Upper Body Strength",

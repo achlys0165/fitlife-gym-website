@@ -13,16 +13,7 @@ const kpis = [
   { title: "Active Subscriptions", value: "1,186", icon: CreditCard },
 ]
 
-interface Invoice {
-  id: string
-  member: string
-  amount: number
-  date: string
-  method: string
-  status: "Paid" | "Pending" | "Overdue" | "Failed"
-}
-
-const invoices: Invoice[] = [
+const invoices = [
   { id: "INV-2401", member: "Sarah Johnson", amount: 79, date: "Feb 8, 2026", method: "Credit Card", status: "Paid" },
   { id: "INV-2402", member: "Mike Chen", amount: 29, date: "Feb 7, 2026", method: "Bank Transfer", status: "Paid" },
   { id: "INV-2403", member: "Emily Davis", amount: 79, date: "Feb 6, 2026", method: "Credit Card", status: "Pending" },
@@ -33,7 +24,7 @@ const invoices: Invoice[] = [
   { id: "INV-2408", member: "Tom Brown", amount: 29, date: "Jan 30, 2026", method: "PayPal", status: "Overdue" },
 ]
 
-const statusColor: Record<Invoice["status"], string> = {
+const statusColor = {
   Paid: "bg-success/10 text-success border-0",
   Pending: "bg-warning/10 text-warning-foreground border-0",
   Overdue: "bg-destructive/10 text-destructive border-0",

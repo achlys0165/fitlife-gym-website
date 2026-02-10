@@ -6,20 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 
-interface GymClass {
-  id: string
-  name: string
-  instructor: string
-  date: string
-  time: string
-  duration: string
-  capacity: number
-  booked: number
-  location: string
-  type: string
-}
-
-const classes: GymClass[] = [
+const classes = [
   { id: "1", name: "Yoga Flow", instructor: "Maria Lopez", date: "Feb 10, 2026", time: "9:00 AM", duration: "60 min", capacity: 20, booked: 14, location: "Studio A", type: "Yoga" },
   { id: "2", name: "HIIT Blast", instructor: "Jake Turner", date: "Feb 10, 2026", time: "10:30 AM", duration: "45 min", capacity: 25, booked: 23, location: "Main Floor", type: "Cardio" },
   { id: "3", name: "Spin Class", instructor: "Lisa Park", date: "Feb 10, 2026", time: "12:00 PM", duration: "45 min", capacity: 15, booked: 12, location: "Spin Room", type: "Cycling" },

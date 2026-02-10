@@ -1,8 +1,7 @@
-import React from "react"
 import { ClientSidebar } from "@/components/client/client-sidebar"
 import { ClientHeader } from "@/components/client/client-header"
 
-export default function ClientLayout({ children }: { children: React.ReactNode }) {
+export default function ClientLayout({ children }) {
   return (
     <div className="flex min-h-screen">
       <ClientSidebar />

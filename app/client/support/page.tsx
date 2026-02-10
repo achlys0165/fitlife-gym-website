@@ -48,12 +48,6 @@ const faqs = [
       "Our gym is open Monday-Friday from 5:00 AM to 11:00 PM, Saturday 6:00 AM to 10:00 PM, and Sunday 7:00 AM to 9:00 PM. Elite members enjoy 24/7 access with their key card.",
   },
   {
-    id: 5,
-    question: "How do I track my body metrics?",
-    answer:
-      "Visit the Body Metrics page from your dashboard. You can log your weight, body fat %, measurements, and more. The system will automatically generate progress charts over time.",
-  },
-  {
     id: 6,
     question: "What is the guest pass policy?",
     answer:
@@ -86,7 +80,7 @@ const tickets = [
 ]
 
 export default function SupportPage() {
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [expandedFaq, setExpandedFaq] = useState(null)
   const [searchQuery, setSearchQuery] = useState("")
   const [newSubject, setNewSubject] = useState("")
   const [newMessage, setNewMessage] = useState("")

@@ -7,21 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 
-interface ClassSlot {
-  id: string
-  name: string
-  instructor: string
-  date: string
-  time: string
-  duration: string
-  location: string
-  type: string
-  capacity: number
-  booked: number
-  userBooked: boolean
-}
-
-const classSlots: ClassSlot[] = [
+const classSlots = [
   { id: "1", name: "Yoga Flow", instructor: "Maria Lopez", date: "Feb 10", time: "9:00 AM", duration: "60 min", location: "Studio A", type: "Yoga", capacity: 20, booked: 14, userBooked: true },
   { id: "2", name: "HIIT Blast", instructor: "Jake Turner", date: "Feb 10", time: "10:30 AM", duration: "45 min", location: "Main Floor", type: "Cardio", capacity: 25, booked: 23, userBooked: false },
   { id: "3", name: "Spin Class", instructor: "Lisa Park", date: "Feb 10", time: "12:00 PM", duration: "45 min", location: "Spin Room", type: "Cycling", capacity: 15, booked: 15, userBooked: false },

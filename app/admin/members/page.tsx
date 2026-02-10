@@ -13,20 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-type MemberStatus = "Active" | "Expired" | "Frozen"
-
-interface Member {
-  id: string
-  name: string
-  email: string
-  membershipId: string
-  plan: string
-  status: MemberStatus
-  joinDate: string
-  expiryDate: string
-}
-
-const members: Member[] = [
+const members = [
   { id: "1", name: "Sarah Johnson", email: "sarah@email.com", membershipId: "FL-1001", plan: "Premium", status: "Active", joinDate: "Jan 15, 2025", expiryDate: "Jan 15, 2026" },
   { id: "2", name: "Mike Chen", email: "mike@email.com", membershipId: "FL-1002", plan: "Basic", status: "Active", joinDate: "Mar 10, 2025", expiryDate: "Mar 10, 2026" },
   { id: "3", name: "Emily Davis", email: "emily@email.com", membershipId: "FL-1003", plan: "Premium", status: "Frozen", joinDate: "Jun 22, 2025", expiryDate: "Jun 22, 2026" },
@@ -37,14 +24,14 @@ const members: Member[] = [
   { id: "8", name: "Tom Brown", email: "tom@email.com", membershipId: "FL-1008", plan: "Basic", status: "Expired", joinDate: "Apr 12, 2025", expiryDate: "Apr 12, 2026" },
 ]
 
-const statusColor: Record<MemberStatus, string> = {
+const statusColor = {
   Active: "bg-success/10 text-success border-0",
   Expired: "bg-destructive/10 text-destructive border-0",
   Frozen: "bg-accent/10 text-accent border-0",
 }
 
 export default function MembersPage() {
-  const [filter, setFilter] = useState<"All" | MemberStatus>("All")
+  const [filter, setFilter] = useState("All")
   const [search, setSearch] = useState("")
 
   const filtered = members.filter((m) => {
@@ -83,7 +70,7 @@ export default function MembersPage() {
             </div>
             <div className="flex items-center gap-2">
               <Filter className="w-4 h-4 text-muted-foreground" />
-              {(["All", "Active", "Expired", "Frozen"] as const).map((s) => (
+              {["All", "Active", "Expired", "Frozen"].map((s) => (
                 <Button
                   key={s}
                   variant={filter === s ? "default" : "outline"}
