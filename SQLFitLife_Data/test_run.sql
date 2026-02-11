@@ -64,18 +64,18 @@ SELECT * FROM service_type;
 SELECT * FROM trainers;
 
 
--- adding member 
+
 INSERT INTO members (full_name, phone, email, join_date)
 VALUES ('Juan Dela Cruz', '09123456789', 'juan@email.com', '2025-02-11');
 
 
 SELECT * FROM members;
 
--- safe mode 
+
 SET SQL_SAFE_UPDATES = 0;
 
 
--- delete the specific user/member
+
 DELETE FROM members
 WHERE full_name = 'Juan Dela Cruz'
 AND phone = '09123456789'
