@@ -14,19 +14,19 @@ TRUNCATE TABLE trainers;
 TRUNCATE TABLE members;
 SET FOREIGN_KEY_CHECKS = 1;
 
--- membership_type
+
 INSERT INTO membership_type (type_name, monthly_fee, perks) VALUES
 ('Gold', 2500.00, 'Unlimited classes, Priority booking'),
 ('Silver', 1500.00, 'Limited classes, Standard booking');
 
--- membership_plan
+
 INSERT INTO membership_plan (membership_type_id, plan_name, duration_months, price) VALUES
 (1,'Monthly',1,2500.00),
 (2,'Monthly',1,1500.00),
 (1,'Annual',12,30000.00),
 (2,'Annual',12,18000.00);
 
--- members
+
 INSERT INTO members (member_id, full_name, phone, email, join_date) VALUES
 (1,'Dingdong Dantes','0917-100-0001','dingdongdantes@example.com','2024-01-15'),
 (2,'Marian Rivera','0917-100-0002','marianrivera@example.com','2024-02-01'),
@@ -54,7 +54,7 @@ INSERT INTO members (member_id, full_name, phone, email, join_date) VALUES
 (24,'Ruru Madrid','0917-100-0024','rurumadrid@example.com','2024-03-01'),
 (25,'Bianca Umali','0917-100-0025','biancaumali@example.com','2024-04-01');
 
--- trainers
+
 INSERT INTO trainers (trainer_id, full_name, phone, email, hire_date) VALUES
 (1,'Alex Cruz','0918-200-0001','alexcruz@fitlife.com','2023-01-01'),
 (2,'Bianca Reyes','0919-200-0002','biancareyes@fitlife.com','2023-01-01'),
@@ -62,7 +62,7 @@ INSERT INTO trainers (trainer_id, full_name, phone, email, hire_date) VALUES
 (4,'Dina Lopez','0921-200-0004','dinalopez@fitlife.com','2023-01-01'),
 (5,'Ethan Lim','0922-200-0005','ethanlim@fitlife.com','2023-01-01');
 
--- service_type
+
 INSERT INTO service_type (service_type_id, service_name, description) VALUES
 (1,'Abs Core','Imported from workout_programs'),
 (2,'Arm Day','Imported from workout_programs'),
@@ -90,7 +90,7 @@ INSERT INTO service_type (service_type_id, service_name, description) VALUES
 (24,'Yoga Flow','Imported from workout_programs'),
 (25,'Zumba','Imported from workout_programs');
 
--- classes
+
 INSERT INTO classes (class_id, class_name, service_type_id, trainer_id, starts_at, duration_minutes, capacity, location) VALUES
 (1,'Abs Core Class',1,1,'2026-02-15 06:00:00',60,20,'Main Studio'),
 (2,'Arm Day Class',2,2,'2026-02-15 07:00:00',60,20,'Main Studio'),
@@ -118,7 +118,7 @@ INSERT INTO classes (class_id, class_name, service_type_id, trainer_id, starts_a
 (24,'Yoga Flow Class',24,4,'2026-02-17 09:00:00',60,20,'Main Studio'),
 (25,'Zumba Class',25,5,'2026-02-17 10:00:00',60,20,'Main Studio');
 
--- membership
+
 INSERT INTO membership (membership_id, member_id, membership_plan_id, start_date, end_date, status) VALUES
 (1,1,1,'2024-01-15','2025-01-15','active'),
 (2,2,1,'2024-02-01','2025-02-01','active'),
@@ -146,7 +146,7 @@ INSERT INTO membership (membership_id, member_id, membership_plan_id, start_date
 (24,24,2,'2024-03-01','2024-09-01','expired'),
 (25,25,1,'2024-04-01','2025-04-01','active');
 
--- bookings
+
 INSERT INTO bookings (booking_id, member_id, class_id, booked_at, status, notes) VALUES
 (1,1,23,'2026-02-10 08:00:00','attended','Imported from attendance_logs (check-in)'),
 (2,2,14,'2026-02-10 08:15:00','attended','Imported from attendance_logs (check-in)'),
@@ -173,7 +173,7 @@ INSERT INTO bookings (booking_id, member_id, class_id, booked_at, status, notes)
 (23,23,11,'2026-02-11 19:00:00','attended','Imported from attendance_logs (check-in)'),
 (24,24,15,'2026-02-12 08:00:00','attended','Imported from attendance_logs (check-in)');
 
--- payments
+
 INSERT INTO payments (payment_id, member_id, membership_id, booking_id, session_id, amount, payment_date, method, reference_no) VALUES
 (1,1,1,NULL,NULL,2500.00,'2024-01-15','cash','INIT-001'),
 (2,2,2,NULL,NULL,2500.00,'2024-02-01','cash','INIT-002'),
