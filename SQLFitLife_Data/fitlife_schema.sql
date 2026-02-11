@@ -24,14 +24,13 @@ CREATE TABLE members (
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- ✅ UPDATED: Added hire_date column here
 CREATE TABLE trainers (
     trainer_id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
     phone VARCHAR(20),
     email VARCHAR(120),
     specialization VARCHAR(80),
-    hire_date DATE NOT NULL,  -- <-- THIS FIXES YOUR ERROR
+    hire_date DATE NOT NULL, 
     is_active TINYINT(1) NOT NULL DEFAULT 1,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
