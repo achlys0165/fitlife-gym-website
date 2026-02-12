@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
+    base: '/fitlife-gym-website/',
   ],
   resolve: {
     alias: {
