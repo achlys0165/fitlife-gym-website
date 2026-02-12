@@ -6,11 +6,13 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/fitlife-gym-website/',
+
   plugins: [
     vue(),
     vueDevTools(),
-    base: '/fitlife-gym-website/',
   ],
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
